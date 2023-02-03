@@ -1,18 +1,22 @@
 
-import './App.css';
+import React, { useState } from 'react';
+ 
+const App = () => {
+    let time = new Date().toLocaleTimeString();
+    
+    const [count, setCount] = useState(time);
 
-import React from 'react'
-
-function App() {
-
-let time = new Date(). toLocaleTimeString();
-
-
-  return (
-   <> 
-   <h1>{time}</h1>
-   </>
-  )
-}
-
-export default App
+    const UpdateTime = () => {
+      var time2 = new Date().toLocaleTimeString();
+     setCount(time2);
+    };
+    
+    setInterval(UpdateTime,1000);
+    return(
+        <>
+           <h1> {count}</h1>
+           
+        </> 
+    );
+};    
+export default App;
